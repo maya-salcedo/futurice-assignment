@@ -17,10 +17,14 @@ export function CompanyProfile() {
   const getData = async () => {
     try {
       setIsLoading(true);
-      const { data } = await axios.get(
+      const { data: company } = await axios.get(
         `https://api.github.com/orgs/${company_name}`
       );
-      setCompany(data);
+      const { data: members } = await axios.get(
+        `https://api.github.com/orgs/${company_name}/public_members`
+      );
+      setCompany(company);
+      setMembers(members);
       setIsLoading(false);
     } catch (err) {
       setIsError(true);
@@ -29,24 +33,8 @@ export function CompanyProfile() {
     }
   };
 
-  const getMembers = async () => {
-    try {
-      setIsLoading(true);
-      const { data } = await axios.get(
-        `https://api.github.com/orgs/${company_name}/public_members`
-      );
-      setMembers(data);
-      setIsLoading(false);
-    } catch (err) {
-      setIsError(true);
-      setIsLoading(false);
-      console.error(`Error at CompanyProfile's Members: ${err}`);
-    }
-  };
-
   useEffect(() => {
     getData();
-    getMembers();
     // eslint-disable-next-line
   }, []);
   return (
@@ -69,17 +57,14 @@ export function CompanyProfile() {
             Website: {company?.blog}
             <br />
           </CardWrapper.Text>
-          {/* {members.length > 0 &&
-            members.map((member) => {
-              return (
-                <div key={member.id}>
-                  <p>{member.login} </p>
-                  <img src={member.avatar_url} alt={member.login} />
-                </div>
-              );
-            })} */}
-
-          {console.log(members.length)}
+          {members?.map((member) => {
+            return (
+              <div key={member.id}>
+                <p>{member.login} </p>
+                <img src={member.avatar_url} alt={member.login} />
+              </div>
+            );
+          })}
           <CardWrapper.Text></CardWrapper.Text>
         </CardWrapper.Box>
       )}

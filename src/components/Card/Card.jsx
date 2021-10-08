@@ -8,7 +8,7 @@ import { ErrorContainer } from '../Error/Error';
 
 export function Card() {
   const [userInput, setUserInput] = useState('futurice');
-  const [company, setCompany] = useState();
+  const [repos, setRepos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -22,7 +22,12 @@ export function Card() {
       const { data } = await axios.get(
         `https://api.github.com/orgs/${userInput}/repos`
       );
-      setCompany(data);
+      const rankedRepo = data
+        .filter(({ size }) => size !== null)
+        .sort((x, y) => y.size - x.size)
+        .map((x, i) => Object.assign({ rank: i + 1 }, x));
+      setRepos(rankedRepo);
+
       setIsLoading(false);
     } catch (err) {
       setIsError(true);
@@ -44,9 +49,14 @@ export function Card() {
             <CardWrapper.Avatar
             // src={`https://avatars.dicebear.com/api/initials/${user.name}.svg`}
             />
-            {/* {console.log(company)} */}
-            <CardWrapper.Name></CardWrapper.Name>
-            <CardWrapper.UserName></CardWrapper.UserName>
+            {repos.map((repo) => (
+              <div key={repo?.id}>
+                <CardWrapper.Name>{repo?.name}</CardWrapper.Name>
+                <CardWrapper.Name>{repo?.rank}</CardWrapper.Name>
+                <CardWrapper.UserName>{repo?.size}</CardWrapper.UserName>
+              </div>
+            ))}
+
             <CardWrapper.Website href="#"></CardWrapper.Website>
             <ButtonLink companyName={userInput} />
           </CardWrapper.Card>
