@@ -12,6 +12,7 @@ const Container = styled.header`
   justify-content: space-between;
   align-content: center;
   color: #24292f;
+  background-color: #fff;
 `;
 
 const Title = styled.h1`
@@ -19,6 +20,13 @@ const Title = styled.h1`
 
   @media (max-width: 542px) {
     font-size: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  @media (max-width: 416px) {
+    padding-top: 1rem;
+    padding-right: 0;
+    font-size: 1rem;
   }
 `;
 
@@ -27,6 +35,14 @@ const HomeIcon = styled.div`
   .icon {
     font-size: 2rem;
     color: #24292f;
+
+    @media (max-width: 542px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 542px) {
+    padding-left: 0.7rem;
   }
 `;
 
