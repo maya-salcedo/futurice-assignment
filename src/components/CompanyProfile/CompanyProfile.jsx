@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import UserWrapper from './Styles';
+import ProfileWrapper from './Styles';
 import CardWrapper from '../Card/Styles';
 import Link from '../Button/Styles';
 import { ErrorContainer } from '../Error/Error';
@@ -38,37 +38,33 @@ export function CompanyProfile() {
     // eslint-disable-next-line
   }, []);
   return (
-    <UserWrapper>
+    <ProfileWrapper>
       {isError && <ErrorContainer />}
       {isLoading ? (
         <LoadingContainer />
       ) : (
         <CardWrapper.Box>
-          <CardWrapper.Title>Name: {company?.name}</CardWrapper.Title>
-          <img src={company?.avatar_url} alt={company?.login} />
-
+          <CardWrapper.Avatar src={company?.avatar_url} alt={company?.login} />
+          <CardWrapper.Title>{company?.name}</CardWrapper.Title>
           <CardWrapper.Text>
-            Description: {company?.description}
+            <strong>Description:</strong> {company?.description}
             <br />
-            GitHub: {company?.html_url} <br />
-            Public repositories: {company?.public_repos}
-          </CardWrapper.Text>
-          <CardWrapper.Text>
-            Website: {company?.blog}
-            <br />
+            <strong>GitHub:</strong> {company?.html_url} <br />
+            <strong>Public repositories:</strong> {company?.public_repos} <br />
+            <strong>Website:</strong> {company?.blog}
           </CardWrapper.Text>
           {members?.map((member) => {
             return (
-              <div key={member.id}>
+              <CardWrapper.MembersList key={member.id}>
                 <p>{member.login} </p>
                 <img src={member.avatar_url} alt={member.login} />
-              </div>
+              </CardWrapper.MembersList>
             );
           })}
           <CardWrapper.Text></CardWrapper.Text>
         </CardWrapper.Box>
       )}
       <Link to="/">Go back</Link>
-    </UserWrapper>
+    </ProfileWrapper>
   );
 }

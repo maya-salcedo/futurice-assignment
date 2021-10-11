@@ -9,23 +9,36 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
 `;
 
 const Box = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
   border-radius: 0.2rem;
   padding: 2rem 2rem;
-  margin: 1rem;
+  width: 30rem;
 
-  @media (max-width: 482px) {
-    margin: 1rem 0.5rem;
-    padding: 2rem 1.5rem;
+  @media (max-width: 604px) {
+    width: 25rem;
+  }
+
+  @media (max-width: 500px) {
+    width: 20rem;
+  }
+
+  @media (max-width: 377px) {
+    padding: 2rem 1rem;
+  }
+`;
+
+const Avatar = styled.div`
+  > img {
+    max-width: 4rem;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   @media (max-width: 590px) {
     font-size: 1.5rem;
@@ -38,12 +51,34 @@ const Title = styled.h1`
 
 const Text = styled.p``;
 
-export default function UserWrapper({ children }) {
+const MembersList = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 35rem;
+  padding: 1rem;
+  > p {
+    font-size: 1.3rem;
+  }
+
+  > img {
+    max-width: 8rem;
+  }
+`;
+
+export default function ProfileWrapper({ children }) {
   return <Wrapper>{children}</Wrapper>;
 }
 
 CardWrapper.Box = function UserWrapperBox({ children }) {
   return <Box>{children}</Box>;
+};
+
+CardWrapper.Avatar = function UserWrapperAvatar({ src, alt }) {
+  return (
+    <Avatar>
+      <img src={src} alt={alt} />
+    </Avatar>
+  );
 };
 
 CardWrapper.Title = function UserWrapperTitle({ children }) {
@@ -52,4 +87,8 @@ CardWrapper.Title = function UserWrapperTitle({ children }) {
 
 CardWrapper.Text = function UserWrapperText({ children }) {
   return <Text>{children}</Text>;
+};
+
+CardWrapper.MembersList = function UserWrapperMembersList({ children }) {
+  return <MembersList>{children}</MembersList>;
 };
