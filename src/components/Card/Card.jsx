@@ -61,19 +61,40 @@ export function Card() {
               {company?.name && (
                 <>
                   {company?.name}
-                  <p>(company)</p>
+                  <p>(company name)</p>
                 </>
               )}
             </CardWrapper.Name>
-            {repos.map((repo) => (
-              <CardWrapper.ListWrapper key={repo?.id}>
-                <CardWrapper.Group>
-                  <CardWrapper.Rank>{repo?.rank}</CardWrapper.Rank>
-                  <CardWrapper.RepoName>{repo?.name}</CardWrapper.RepoName>
-                </CardWrapper.Group>
-                <CardWrapper.Size>{repo?.size}</CardWrapper.Size>
-              </CardWrapper.ListWrapper>
-            ))}
+            <CardWrapper.Table>
+              <thead>
+                {repos.length > 0 && (
+                  <tr>
+                    <th>Rank</th>
+                    <CardWrapper.RepoHeading>
+                      Repository Name
+                    </CardWrapper.RepoHeading>
+                    <CardWrapper.SizeHeading>Size</CardWrapper.SizeHeading>
+                  </tr>
+                )}
+              </thead>
+              <tbody>
+                {repos.map((repo) => (
+                  <tr key={repo?.id}>
+                    <td>{repo?.rank}</td>
+                    <CardWrapper.RepoTitle>
+                      <a
+                        href={repo?.clone_url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {repo?.name}
+                      </a>
+                    </CardWrapper.RepoTitle>
+                    <CardWrapper.RepoSize>{repo?.size}</CardWrapper.RepoSize>
+                  </tr>
+                ))}
+              </tbody>
+            </CardWrapper.Table>
             <ButtonLink companyName={userInput} />
           </CardWrapper.Card>
         </>

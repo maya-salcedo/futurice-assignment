@@ -28,12 +28,14 @@ const Card = styled.div`
 `;
 
 const Search = styled.div`
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
   background-color: #fff;
   padding: 0.5rem;
   color: #24292f;
   border: 1px solid #24292f;
   border-radius: 0.2rem;
+  margin-top: 1rem;
 `;
 
 const SearchInput = styled.input`
@@ -42,8 +44,6 @@ const SearchInput = styled.input`
   line-height: 152%;
   background-image: none;
   box-shadow: none;
-  padding-right: 3rem;
-  width: 23rem;
   font-weight: 400;
   background-color: #fff;
   font-family: inherit;
@@ -55,7 +55,7 @@ const SearchButton = styled.button`
   background-color: transparent;
   border: none;
   .icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #595260;
   }
 `;
@@ -63,6 +63,7 @@ const SearchButton = styled.button`
 const Name = styled.h1`
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color: #3d56b2;
 
   > p {
     font-size: 0.8rem;
@@ -71,37 +72,59 @@ const Name = styled.h1`
     margin: 0;
     text-align: center;
   }
-  @media (max-width: 377px) {
+  @media (max-width: 434px) {
     font-size: 1.2rem;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 1.1rem;
+  }
+`;
+// border-bottom: 0.05rem solid #c8c6c6;
+// size: color: #595260;
+const Table = styled.table`
+  text-align: center;
+  padding: 0.5rem;
+  border-collapse: collapse;
+
+  & tr {
+    border-bottom: 0.05rem solid #c8c6c6;
+    line-height: 2rem;
+  }
+
+  & tr:last-of-type {
+    border-bottom: none;
   }
 `;
 
-const ListWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: auto;
-  width: 28rem;
-  border-bottom: 0.05rem solid #c8c6c6;
-`;
-
-const Group = styled(ListWrapper)`
-  justify-content: start;
-  width: auto;
-  border-bottom: none;
-`;
-
-const Rank = styled.p``;
-
-const RepoName = styled.h2`
-  font-size: 1rem;
+const RepoHeading = styled.th`
+  text-align: left;
   padding-left: 1rem;
-  padding-top: 0.3rem;
+  padding-right: 1rem;
 `;
 
-const Size = styled.p`
-  color: #595260;
+const SizeHeading = styled.th`
+  text-align: right;
+`;
+
+const RepoTitle = styled.td`
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  > a {
+    text-decoration: none;
+    color: #24292f;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: underline;
+      color: #3d56b2;
+    }
+  }
+`;
+
+const RepoSize = styled.td`
+  text-align: right;
 `;
 
 export default function CardWrapper({ children }) {
@@ -132,22 +155,22 @@ CardWrapper.Name = function CardWrapperName({ children }) {
   return <Name>{children}</Name>;
 };
 
-CardWrapper.ListWrapper = function CardWrapperListWrapper({ children }) {
-  return <ListWrapper>{children}</ListWrapper>;
+CardWrapper.Table = function CardWrapperTable({ children }) {
+  return <Table>{children}</Table>;
 };
 
-CardWrapper.Group = function CardWrapperGroup({ children }) {
-  return <Group>{children}</Group>;
+CardWrapper.RepoHeading = function CardWrapperRepoHeading({ children }) {
+  return <RepoHeading>{children}</RepoHeading>;
 };
 
-CardWrapper.Rank = function CardWrapperRank({ children }) {
-  return <Rank>{children}</Rank>;
+CardWrapper.SizeHeading = function CardWrapperSizeHeading({ children }) {
+  return <SizeHeading>{children}</SizeHeading>;
 };
 
-CardWrapper.RepoName = function CardWrapperRepoName({ children }) {
-  return <RepoName>{children}</RepoName>;
+CardWrapper.RepoTitle = function CardWrapperRepoTitle({ children }) {
+  return <RepoTitle>{children}</RepoTitle>;
 };
 
-CardWrapper.Size = function CardWrapperSize({ children }) {
-  return <Size>{children}</Size>;
+CardWrapper.RepoSize = function CardWrapperRepoSize({ children }) {
+  return <RepoSize>{children}</RepoSize>;
 };
