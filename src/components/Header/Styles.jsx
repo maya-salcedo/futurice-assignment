@@ -23,15 +23,15 @@ const Container = styled.header`
 
 const Title = styled.h1`
   padding: 2.2rem 0 2rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0;
 
   @media (min-width: 400px) {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   @media (min-width: 500px) {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 `;
 

@@ -25,7 +25,7 @@ const Card = styled.div`
   width: 98%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
   border-radius: 0.2rem;
-  padding: 1rem 1rem 1.5rem;
+  padding: 2rem 1rem 2.5rem;
 
   @media (min-width: 550px) {
     width: 30rem;
@@ -71,11 +71,11 @@ const SearchButton = styled.button`
 `;
 
 const Name = styled.h1`
-  font-size: 1.1rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: #3d56b2;
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 
   > p {
     font-size: 0.8rem;
@@ -86,7 +86,7 @@ const Name = styled.h1`
   }
 
   @media (min-width: 434px) {
-    font-size: 1.3rem;
+    font-size: 4rem;
   }
 `;
 

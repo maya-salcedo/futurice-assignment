@@ -49,53 +49,52 @@ export function Card() {
       ) : (
         <>
           <CardWrapper.Card>
-            <CardWrapper.Name>Company's Repos Ranked by Size</CardWrapper.Name>
             <CardWrapper.Search>
               <CardWrapper.SearchInput
-                placeholder="search company"
+                placeholder="search company name"
                 onChange={handleSearch}
               />
               <CardWrapper.SearchButton onClick={handleSubmit} />
             </CardWrapper.Search>
-            <CardWrapper.Name>
-              {company?.name && (
-                <>
+            {repos?.length > 0 && (
+              <>
+                <CardWrapper.Name>
                   {company?.name}
                   <p>(company name)</p>
-                </>
-              )}
-            </CardWrapper.Name>
-            <CardWrapper.Table>
-              <thead>
-                {repos?.length > 0 && (
-                  <tr>
-                    <th>Rank</th>
-                    <CardWrapper.RepoHeading>
-                      Repository Name
-                    </CardWrapper.RepoHeading>
-                    <CardWrapper.SizeHeading>Size</CardWrapper.SizeHeading>
-                  </tr>
-                )}
-              </thead>
-              <tbody>
-                {repos?.map((repo) => (
-                  <tr key={repo?.id}>
-                    <td>{repo?.rank}</td>
-                    <CardWrapper.RepoTitle>
-                      <a
-                        href={repo?.clone_url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {repo?.name}
-                      </a>
-                    </CardWrapper.RepoTitle>
-                    <CardWrapper.RepoSize>{repo?.size}</CardWrapper.RepoSize>
-                  </tr>
-                ))}
-              </tbody>
-            </CardWrapper.Table>
-            <ButtonLink companyName={userInput} />
+                </CardWrapper.Name>
+                <CardWrapper.Table>
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <CardWrapper.RepoHeading>
+                        Repositories
+                      </CardWrapper.RepoHeading>
+                      <CardWrapper.SizeHeading>Size</CardWrapper.SizeHeading>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {repos?.map((repo) => (
+                      <tr key={repo?.id}>
+                        <td>{repo?.rank}</td>
+                        <CardWrapper.RepoTitle>
+                          <a
+                            href={repo?.clone_url}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {repo?.name}
+                          </a>
+                        </CardWrapper.RepoTitle>
+                        <CardWrapper.RepoSize>
+                          {repo?.size}
+                        </CardWrapper.RepoSize>
+                      </tr>
+                    ))}
+                  </tbody>
+                </CardWrapper.Table>
+                <ButtonLink companyName={userInput} />
+              </>
+            )}
           </CardWrapper.Card>
         </>
       )}

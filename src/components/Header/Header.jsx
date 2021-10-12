@@ -6,7 +6,7 @@ import HeaderWrapper from './Styles';
 export default function Header() {
   return (
     <HeaderWrapper>
-      <HeaderWrapper.Title>Search Companies in GitHub</HeaderWrapper.Title>
+      <HeaderWrapper.Title>Search Company's Repo in GitHub</HeaderWrapper.Title>
       <Link to="/">
         <HeaderWrapper.HomeIcon />
       </Link>
