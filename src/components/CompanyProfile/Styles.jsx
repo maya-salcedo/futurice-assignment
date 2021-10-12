@@ -54,11 +54,20 @@ const Text = styled.p`
   letter-spacing: 0.01em;
 `;
 
+const TitleSmall = styled.h1`
+  font-size: 1.3rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+  padding-top: 1rem;
+  font-style: italic;
+`;
+
 const MembersList = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 35rem;
   padding: 1rem;
+
   > p {
     font-size: 1.3rem;
 
@@ -103,6 +112,10 @@ CardWrapper.Title = function UserWrapperTitle({ children }) {
 
 CardWrapper.Text = function UserWrapperText({ children }) {
   return <Text>{children}</Text>;
+};
+
+CardWrapper.TitleSmall = function UserWrapperTitleSmall({ children }) {
+  return <TitleSmall>{children}</TitleSmall>;
 };
 
 CardWrapper.MembersList = function UserWrapperMembersList({ children }) {

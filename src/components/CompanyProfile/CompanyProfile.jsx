@@ -53,6 +53,7 @@ export function CompanyProfile() {
             <strong>Public repositories:</strong> {company?.public_repos} <br />
             <strong>Website:</strong> {company?.blog}
           </CardWrapper.Text>
+          <CardWrapper.TitleSmall>Public Members</CardWrapper.TitleSmall>
           {members?.map((member) => {
             return (
               <CardWrapper.MembersList key={member.id}>
