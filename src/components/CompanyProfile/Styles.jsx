@@ -23,11 +23,10 @@ const Box = styled.div`
   }
 
   @media (max-width: 500px) {
-    width: 20rem;
-  }
-
-  @media (max-width: 377px) {
+    width: 98%;
     padding: 2rem 1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -49,7 +48,10 @@ const Title = styled.h1`
   }
 `;
 
-const Text = styled.p``;
+const Text = styled.p`
+  line-height: 130%;
+  letter-spacing: 0.03em;
+`;
 
 const MembersList = styled.div`
   display: flex;
@@ -58,10 +60,23 @@ const MembersList = styled.div`
   padding: 1rem;
   > p {
     font-size: 1.3rem;
+
+    @media (max-width: 500px) {
+      font-size: 1rem;
+    }
   }
 
   > img {
     max-width: 8rem;
+
+    @media (max-width: 500px) {
+      width: 4rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    padding: 1rem 0;
+    width: 95%;
   }
 `;
 
