@@ -38,14 +38,10 @@ const Avatar = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 
-  @media (max-width: 590px) {
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 478px) {
-    font-size: 1.1rem;
+  @media (min-width: 478px) {
+    font-size: 1.6rem;
   }
 `;
 
