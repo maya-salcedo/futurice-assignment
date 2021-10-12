@@ -67,7 +67,7 @@ export function Card() {
             </CardWrapper.Name>
             <CardWrapper.Table>
               <thead>
-                {repos.length > 0 && (
+                {repos?.length > 0 && (
                   <tr>
                     <th>Rank</th>
                     <CardWrapper.RepoHeading>
@@ -78,7 +78,7 @@ export function Card() {
                 )}
               </thead>
               <tbody>
-                {repos.map((repo) => (
+                {repos?.map((repo) => (
                   <tr key={repo?.id}>
                     <td>{repo?.rank}</td>
                     <CardWrapper.RepoTitle>

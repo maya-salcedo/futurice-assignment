@@ -74,7 +74,7 @@ export function CompanyProfile() {
           <CardWrapper.Text></CardWrapper.Text>
         </CardWrapper.Box>
       )}
-      <Link to="/">Go back</Link>
+      <Link to="/">GO BACK</Link>
     </ProfileWrapper>
   );
 }
