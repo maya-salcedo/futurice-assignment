@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   align-content: center;
   padding: 3rem 1rem;
   margin-top: 3rem;
+  min-height: 100vh;
 `;
 
 const Box = styled.div`
