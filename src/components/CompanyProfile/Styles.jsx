@@ -32,8 +32,9 @@ const Box = styled.div`
 `;
 
 const Avatar = styled.div`
+  text-align: center;
   > img {
-    max-width: 4rem;
+    max-width: 8rem;
   }
 `;
 

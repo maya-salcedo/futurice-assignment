@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
   text-align: center;
+  flex: 1;
 `;
 
 export default function Footer() {

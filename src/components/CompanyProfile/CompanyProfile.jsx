@@ -47,15 +47,16 @@ export function CompanyProfile() {
           <CardWrapper.Avatar src={company?.avatar_url} alt={company?.login} />
           <CardWrapper.Title>{company?.name}</CardWrapper.Title>
           <CardWrapper.Text>
-            <strong>Description:</strong> {company?.description}
+            <strong>Description: </strong> {company?.description}
             <br />
-            <strong>GitHub:</strong>
+            <strong>GitHub: </strong>
             <CardWrapper.Link href={company?.html_url}>
               {company?.html_url}
             </CardWrapper.Link>
             <br />
-            <strong>Public repositories:</strong> {company?.public_repos} <br />
-            <strong>Website:</strong>
+            <strong>Public repositories: </strong> {company?.public_repos}{' '}
+            <br />
+            <strong>Website: </strong>
             <CardWrapper.Link href={company?.blog}>
               {company?.blog}
             </CardWrapper.Link>
