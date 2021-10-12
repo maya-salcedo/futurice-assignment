@@ -18,6 +18,7 @@ export function Card() {
   };
 
   const handleSubmit = async () => {
+    setIsError(false);
     setIsLoading(true);
     try {
       const { data: company } = await axios.get(
@@ -32,7 +33,6 @@ export function Card() {
         .sort((x, y) => y.size - x.size)
         .map((x, i) => Object.assign({ rank: i + 1 }, x));
       setRepos(rankedRepo);
-
       setIsLoading(false);
     } catch (err) {
       setIsError(true);
