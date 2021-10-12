@@ -49,16 +49,25 @@ export function CompanyProfile() {
           <CardWrapper.Text>
             <strong>Description:</strong> {company?.description}
             <br />
-            <strong>GitHub:</strong> {company?.html_url} <br />
+            <strong>GitHub:</strong>
+            <CardWrapper.Link href={company?.html_url}>
+              {company?.html_url}
+            </CardWrapper.Link>
+            <br />
             <strong>Public repositories:</strong> {company?.public_repos} <br />
-            <strong>Website:</strong> {company?.blog}
+            <strong>Website:</strong>
+            <CardWrapper.Link href={company?.blog}>
+              {company?.blog}
+            </CardWrapper.Link>
           </CardWrapper.Text>
           <CardWrapper.TitleSmall>Public Members</CardWrapper.TitleSmall>
           {members?.map((member) => {
             return (
-              <CardWrapper.MembersList key={member.id}>
-                <p>{member.login} </p>
-                <img src={member.avatar_url} alt={member.login} />
+              <CardWrapper.MembersList key={member?.id}>
+                <CardWrapper.Link href={member?.html_url}>
+                  {member?.login}
+                </CardWrapper.Link>
+                <img src={member.avatar_url} alt={member?.login} />
               </CardWrapper.MembersList>
             );
           })}

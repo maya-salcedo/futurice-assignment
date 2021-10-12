@@ -62,6 +62,11 @@ const SearchButton = styled.button`
   .icon {
     font-size: 1.2rem;
     color: #595260;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 
@@ -115,18 +120,20 @@ const RepoTitle = styled.td`
   padding-right: 1rem;
   > a {
     text-decoration: none;
-    color: #24292f;
+    color: #3d56b2;
     display: inline-block;
 
     &:hover {
       text-decoration: underline;
-      color: #3d56b2;
     }
   }
 `;
 
 const RepoSize = styled.td`
   text-align: right;
+  color: #595260;
+  font-style: italic;
+  font-size: 0.8rem;
 `;
 
 export default function CardWrapper({ children }) {
@@ -142,7 +149,7 @@ CardWrapper.Search = function CardWrapperSearch({ children }) {
 };
 
 CardWrapper.SearchInput = function CardWrapperSearchInput({ ...restProps }) {
-  return <SearchInput {...restProps} />;
+  return <SearchInput {...restProps} autoFocus />;
 };
 
 CardWrapper.SearchButton = function CardWrapperSearchButton({ onClick }) {

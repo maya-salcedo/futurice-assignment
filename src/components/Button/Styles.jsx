@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const StyledLink = styled(ReachRouterLink)`
   text-decoration: none;
   background-color: #3d56b2;
+  opacity: 0.8;
   width: 8rem;
   height: fit-content;
   color: white;
@@ -16,6 +17,10 @@ const StyledLink = styled(ReachRouterLink)`
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export default function Link({ children, to }) {

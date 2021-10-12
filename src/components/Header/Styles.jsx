@@ -40,6 +40,11 @@ const HomeIcon = styled.div`
     font-size: 1.5rem;
     color: #24292f;
     padding: 2rem 1rem 2rem 0.5rem;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
 
     @media (min-width: 400px) {
       font-size: 1.6rem;

@@ -54,6 +54,15 @@ const Text = styled.p`
   letter-spacing: 0.01em;
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+  color: #3d56b2;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const TitleSmall = styled.h1`
   font-size: 1.3rem;
   text-align: center;
@@ -67,14 +76,6 @@ const MembersList = styled.div`
   justify-content: space-between;
   max-width: 35rem;
   padding: 1rem;
-
-  > p {
-    font-size: 1.3rem;
-
-    @media (max-width: 500px) {
-      font-size: 1rem;
-    }
-  }
 
   > img {
     max-width: 8rem;
@@ -108,6 +109,14 @@ CardWrapper.Avatar = function UserWrapperAvatar({ src, alt }) {
 
 CardWrapper.Title = function UserWrapperTitle({ children }) {
   return <Title>{children}</Title>;
+};
+
+CardWrapper.Link = function UserWrapperLink({ href, children }) {
+  return (
+    <Link href={href} target="_blank" rel="noreferrer">
+      {children}
+    </Link>
+  );
 };
 
 CardWrapper.Text = function UserWrapperText({ children }) {
