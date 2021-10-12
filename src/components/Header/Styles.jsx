@@ -5,6 +5,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.header`
   position: fixed;
+  z-index: 20;
   top: 0;
   right: 0;
   left: 0;

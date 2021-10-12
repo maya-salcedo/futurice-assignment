@@ -70,20 +70,20 @@ const SearchButton = styled.button`
   }
 `;
 
+const TextSmall = styled.p`
+  margin: 0.1rem 0;
+  font-size: 0.7rem;
+  color: #595260;
+  font-style: italic;
+`;
+
 const Name = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: #3d56b2;
   text-align: center;
-  padding-top: 0.5rem;
-
-  > p {
-    font-size: 0.8rem;
-    color: #595260;
-    font-style: italic;
-    margin: 0;
-    text-align: center;
-  }
+  padding-top: 0;
+  margin-top: 0.5rem;
 
   @media (min-width: 434px) {
     font-size: 4rem;
@@ -160,6 +160,10 @@ CardWrapper.SearchButton = function CardWrapperSearchButton({ onClick }) {
       <FontAwesomeIcon icon={faSearch} className="icon"></FontAwesomeIcon>
     </SearchButton>
   );
+};
+
+CardWrapper.TextSmall = function CardWrapperTextSmall({ children }) {
+  return <TextSmall>{children}</TextSmall>;
 };
 
 CardWrapper.Name = function CardWrapperName({ children }) {

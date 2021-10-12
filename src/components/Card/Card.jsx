@@ -37,6 +37,8 @@ export function Card() {
     } catch (err) {
       setIsError(true);
       setIsLoading(false);
+      setRepos([]);
+      setUserInput('futurice');
       console.error(`Error at Card: ${err}`);
     }
   };
@@ -51,17 +53,18 @@ export function Card() {
           <CardWrapper.Card>
             <CardWrapper.Search>
               <CardWrapper.SearchInput
-                placeholder="search company name"
+                placeholder="company name"
                 onChange={handleSearch}
               />
               <CardWrapper.SearchButton onClick={handleSubmit} />
             </CardWrapper.Search>
+            <CardWrapper.TextSmall>
+              {repos?.length === 0 && '*** defaults to Futurice'}
+            </CardWrapper.TextSmall>
             {repos?.length > 0 && (
               <>
-                <CardWrapper.Name>
-                  {company?.name}
-                  <p>(company name)</p>
-                </CardWrapper.Name>
+                <CardWrapper.Name>{company?.name}</CardWrapper.Name>
+                <ButtonLink companyName={userInput} />
                 <CardWrapper.Table>
                   <thead>
                     <tr>
@@ -92,7 +95,6 @@ export function Card() {
                     ))}
                   </tbody>
                 </CardWrapper.Table>
-                <ButtonLink companyName={userInput} />
               </>
             )}
           </CardWrapper.Card>
