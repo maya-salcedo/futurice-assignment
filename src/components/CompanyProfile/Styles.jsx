@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   align-items: center;
   align-content: center;
   padding: 3rem 1rem;
+  margin-top: 3rem;
 `;
 
 const Box = styled.div`
@@ -50,7 +51,7 @@ const Title = styled.h1`
 
 const Text = styled.p`
   line-height: 130%;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
 `;
 
 const MembersList = styled.div`

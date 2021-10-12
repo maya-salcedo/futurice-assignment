@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
+  margin-top: 3rem;
   padding: 3rem 1rem;
 `;
 
@@ -21,10 +22,14 @@ const Card = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-  width: 30rem;
+  width: 98%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
   border-radius: 0.2rem;
   padding: 2rem 1rem;
+
+  @media (min-width: 550px) {
+    width: 30rem;
+  }
 `;
 
 const Search = styled.div`
@@ -40,8 +45,8 @@ const Search = styled.div`
 
 const SearchInput = styled.input`
   position: relative;
-  font-size: 1.125rem;
-  line-height: 152%;
+  font-size: 1rem;
+  line-height: 130%;
   background-image: none;
   box-shadow: none;
   font-weight: 400;
@@ -61,9 +66,10 @@ const SearchButton = styled.button`
 `;
 
 const Name = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: #3d56b2;
+  text-align: center;
 
   > p {
     font-size: 0.8rem;
@@ -72,18 +78,14 @@ const Name = styled.h1`
     margin: 0;
     text-align: center;
   }
-  @media (max-width: 434px) {
-    font-size: 1.2rem;
-  }
-
-  @media (max-width: 374px) {
-    font-size: 1.1rem;
+  @media (min-width: 434px) {
+    font-size: 1.3rem;
   }
 `;
-// border-bottom: 0.05rem solid #c8c6c6;
-// size: color: #595260;
+
 const Table = styled.table`
   text-align: center;
+  margin-top: 1rem;
   padding: 0.5rem;
   border-collapse: collapse;
 

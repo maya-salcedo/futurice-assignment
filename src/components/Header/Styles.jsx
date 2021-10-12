@@ -22,10 +22,15 @@ const Container = styled.header`
 `;
 
 const Title = styled.h1`
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 2.2rem 0 2rem 1rem;
+  font-size: 1.2rem;
+  margin: 0;
 
-  @media (min-width: 600px) {
+  @media (min-width: 400px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 500px) {
     font-size: 1.8rem;
   }
 `;
@@ -34,7 +39,12 @@ const HomeIcon = styled.div`
   .icon {
     font-size: 1.5rem;
     color: #24292f;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 2rem 0.5rem;
+
+    @media (min-width: 400px) {
+      font-size: 1.6rem;
+      padding-top: 2.2rem;
+    }
 
     @media (min-width: 600px) {
       font-size: 2rem;
