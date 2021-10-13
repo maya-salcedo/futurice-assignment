@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import CardWrapper from '../Card/Styles';
 
 const Wrapper = styled.div`
   display: flex;
@@ -92,11 +91,11 @@ export default function ProfileWrapper({ children }) {
   return <Wrapper>{children}</Wrapper>;
 }
 
-CardWrapper.Box = function UserWrapperBox({ children }) {
+ProfileWrapper.Box = function ProfileWrapperBox({ children }) {
   return <Box>{children}</Box>;
 };
 
-CardWrapper.Avatar = function UserWrapperAvatar({ src, alt }) {
+ProfileWrapper.Avatar = function ProfileWrapperAvatar({ src, alt }) {
   return (
     <Avatar>
       <img src={src} alt={alt} />
@@ -104,11 +103,11 @@ CardWrapper.Avatar = function UserWrapperAvatar({ src, alt }) {
   );
 };
 
-CardWrapper.Title = function UserWrapperTitle({ children }) {
+ProfileWrapper.Title = function ProfileWrapperTitle({ children }) {
   return <Title>{children}</Title>;
 };
 
-CardWrapper.Link = function UserWrapperLink({ href, children }) {
+ProfileWrapper.Link = function ProfileWrapperLink({ href, children }) {
   return (
     <Link href={href} target="_blank" rel="noreferrer">
       {children}
@@ -116,14 +115,14 @@ CardWrapper.Link = function UserWrapperLink({ href, children }) {
   );
 };
 
-CardWrapper.Text = function UserWrapperText({ children }) {
+ProfileWrapper.Text = function ProfileWrapperText({ children }) {
   return <Text>{children}</Text>;
 };
 
-CardWrapper.TitleSmall = function UserWrapperTitleSmall({ children }) {
+ProfileWrapper.TitleSmall = function ProfileWrapperTitleSmall({ children }) {
   return <TitleSmall>{children}</TitleSmall>;
 };
 
-CardWrapper.MembersList = function UserWrapperMembersList({ children }) {
+ProfileWrapper.MembersList = function ProfileWrapperMembersList({ children }) {
   return <MembersList>{children}</MembersList>;
 };

@@ -138,23 +138,23 @@ const RepoSize = styled.td`
   font-size: 0.8rem;
 `;
 
-export default function CardWrapper({ children }) {
+export default function HomeWrapper({ children }) {
   return <Wrapper>{children}</Wrapper>;
 }
 
-CardWrapper.Card = function CardWrapperCard({ children }) {
+HomeWrapper.Card = function HomeWrapperCard({ children }) {
   return <Card>{children}</Card>;
 };
 
-CardWrapper.Search = function CardWrapperSearch({ children }) {
+HomeWrapper.Search = function HomeWrapperSearch({ children }) {
   return <Search>{children}</Search>;
 };
 
-CardWrapper.SearchInput = function CardWrapperSearchInput({ ...restProps }) {
+HomeWrapper.SearchInput = function HomeWrapperSearchInput({ ...restProps }) {
   return <SearchInput {...restProps} autoFocus />;
 };
 
-CardWrapper.SearchButton = function CardWrapperSearchButton({ onClick }) {
+HomeWrapper.SearchButton = function HomeWrapperSearchButton({ onClick }) {
   return (
     <SearchButton onClick={onClick}>
       <FontAwesomeIcon icon={faSearch} className="icon"></FontAwesomeIcon>
@@ -162,30 +162,30 @@ CardWrapper.SearchButton = function CardWrapperSearchButton({ onClick }) {
   );
 };
 
-CardWrapper.TextSmall = function CardWrapperTextSmall({ children }) {
+HomeWrapper.TextSmall = function HomeWrapperTextSmall({ children }) {
   return <TextSmall>{children}</TextSmall>;
 };
 
-CardWrapper.Name = function CardWrapperName({ children }) {
+HomeWrapper.Name = function HomeWrapperName({ children }) {
   return <Name>{children}</Name>;
 };
 
-CardWrapper.Table = function CardWrapperTable({ children }) {
+HomeWrapper.Table = function HomeWrapperTable({ children }) {
   return <Table>{children}</Table>;
 };
 
-CardWrapper.RepoHeading = function CardWrapperRepoHeading({ children }) {
+HomeWrapper.RepoHeading = function HomeWrapperRepoHeading({ children }) {
   return <RepoHeading>{children}</RepoHeading>;
 };
 
-CardWrapper.SizeHeading = function CardWrapperSizeHeading({ children }) {
+HomeWrapper.SizeHeading = function HomeWrapperSizeHeading({ children }) {
   return <SizeHeading>{children}</SizeHeading>;
 };
 
-CardWrapper.RepoTitle = function CardWrapperRepoTitle({ children }) {
+HomeWrapper.RepoTitle = function HomeWrapperRepoTitle({ children }) {
   return <RepoTitle>{children}</RepoTitle>;
 };
 
-CardWrapper.RepoSize = function CardWrapperRepoSize({ children }) {
+HomeWrapper.RepoSize = function HomeWrapperRepoSize({ children }) {
   return <RepoSize>{children}</RepoSize>;
 };
