@@ -24,7 +24,7 @@ const Container = styled.header`
 
 const Title = styled.h1`
   padding: 2.2rem 0 2rem 1rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin: 0;
 
   @media (min-width: 400px) {

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Card } from './components/Card/Card';
 import { CompanyProfile } from './components/CompanyProfile/CompanyProfile';
-import Footer from './components/Footer/Footer';
+import FooterCredits from './components/Footer/Footer';
 import Header from './components/Header/Header';
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
       <Header />
       <Route path="/" component={Card} exact></Route>
       <Route path="/:company_name" component={CompanyProfile}></Route>
-      <Footer />
+      <FooterCredits />
     </BrowserRouter>
   );
 }

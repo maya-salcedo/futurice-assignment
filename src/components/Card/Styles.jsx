@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   align-content: center;
   margin-top: 3rem;
   padding: 3rem 1rem;
-  min-height: 90vh;
 `;
 
 const Card = styled.div`
