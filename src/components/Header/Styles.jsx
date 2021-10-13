@@ -27,6 +27,10 @@ const Title = styled.h1`
   font-size: 0.95rem;
   margin: 0;
 
+  @media (min-width: 320px) {
+    font-size: 1rem;
+  }
+
   @media (min-width: 400px) {
     font-size: 1.3rem;
   }
