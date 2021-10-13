@@ -77,65 +77,33 @@ const TextSmall = styled.p`
   font-style: italic;
 `;
 
-const Name = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+const Avatar = styled.div`
+  text-align: center;
+  > img {
+    max-width: 8rem;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 1.4rem;
+
+  @media (min-width: 478px) {
+    font-size: 1.6rem;
+  }
+`;
+
+const Text = styled.p`
+  line-height: 130%;
+  letter-spacing: 0.01em;
+`;
+
+const Link = styled.a`
+  text-decoration: none;
   color: #3d56b2;
-  text-align: center;
-  padding-top: 0;
-  margin-top: 0.5rem;
 
-  @media (min-width: 434px) {
-    font-size: 4rem;
+  &:hover {
+    text-decoration: underline;
   }
-`;
-
-const Table = styled.table`
-  text-align: center;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  border-collapse: collapse;
-
-  & tr {
-    border-bottom: 0.05rem solid #c8c6c6;
-    line-height: 2rem;
-  }
-
-  & tr:last-of-type {
-    border-bottom: none;
-  }
-`;
-
-const RepoHeading = styled.th`
-  text-align: left;
-  padding-left: 1rem;
-  padding-right: 1rem;
-`;
-
-const SizeHeading = styled.th`
-  text-align: right;
-`;
-
-const RepoTitle = styled.td`
-  text-align: left;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  > a {
-    text-decoration: none;
-    color: #3d56b2;
-    display: inline-block;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
-const RepoSize = styled.td`
-  text-align: right;
-  color: #595260;
-  font-style: italic;
-  font-size: 0.8rem;
 `;
 
 export default function HomeWrapper({ children }) {
@@ -166,26 +134,26 @@ HomeWrapper.TextSmall = function HomeWrapperTextSmall({ children }) {
   return <TextSmall>{children}</TextSmall>;
 };
 
-HomeWrapper.Name = function HomeWrapperName({ children }) {
-  return <Name>{children}</Name>;
+HomeWrapper.Avatar = function HomeWrapperAvatar({ src, alt }) {
+  return (
+    <Avatar>
+      <img src={src} alt={alt} />
+    </Avatar>
+  );
 };
 
-HomeWrapper.Table = function HomeWrapperTable({ children }) {
-  return <Table>{children}</Table>;
+HomeWrapper.Title = function HomeWrapperTitle({ children }) {
+  return <Title>{children}</Title>;
 };
 
-HomeWrapper.RepoHeading = function HomeWrapperRepoHeading({ children }) {
-  return <RepoHeading>{children}</RepoHeading>;
+HomeWrapper.Link = function HomeWrapperLink({ href, children }) {
+  return (
+    <Link href={href} target="_blank" rel="noreferrer">
+      {children}
+    </Link>
+  );
 };
 
-HomeWrapper.SizeHeading = function HomeWrapperSizeHeading({ children }) {
-  return <SizeHeading>{children}</SizeHeading>;
-};
-
-HomeWrapper.RepoTitle = function HomeWrapperRepoTitle({ children }) {
-  return <RepoTitle>{children}</RepoTitle>;
-};
-
-HomeWrapper.RepoSize = function HomeWrapperRepoSize({ children }) {
-  return <RepoSize>{children}</RepoSize>;
+HomeWrapper.Text = function HomeWrapperText({ children }) {
+  return <Text>{children}</Text>;
 };

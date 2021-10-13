@@ -2,7 +2,9 @@ import React from 'react';
 import { Link as ReachRouterLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledLink = styled(ReachRouterLink)`
+const Container = styled.div``;
+
+const Link = styled(ReachRouterLink)`
   text-decoration: none;
   background-color: #3d56b2;
   opacity: 0.8;
@@ -23,6 +25,10 @@ const StyledLink = styled(ReachRouterLink)`
   }
 `;
 
-export default function Link({ children, to }) {
-  return <StyledLink to={to}>{children}</StyledLink>;
+export default function Button({ children }) {
+  return <Container>{children}</Container>;
 }
+
+Button.Link = function ButtonLink({ to, children }) {
+  return <Link to={to}>{children}</Link>;
+};

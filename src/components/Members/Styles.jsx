@@ -30,35 +30,6 @@ const Box = styled.div`
   }
 `;
 
-const Avatar = styled.div`
-  text-align: center;
-  > img {
-    max-width: 8rem;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 1.4rem;
-
-  @media (min-width: 478px) {
-    font-size: 1.6rem;
-  }
-`;
-
-const Text = styled.p`
-  line-height: 130%;
-  letter-spacing: 0.01em;
-`;
-
-const Link = styled.a`
-  text-decoration: none;
-  color: #3d56b2;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 const TitleSmall = styled.h1`
   font-size: 1.3rem;
   text-align: center;
@@ -87,42 +58,34 @@ const MembersList = styled.div`
   }
 `;
 
-export default function ProfileWrapper({ children }) {
+const Link = styled.a`
+  text-decoration: none;
+  color: #3d56b2;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export default function MembersWrapper({ children }) {
   return <Wrapper>{children}</Wrapper>;
 }
 
-ProfileWrapper.Box = function ProfileWrapperBox({ children }) {
+MembersWrapper.Box = function MembersWrapperBox({ children }) {
   return <Box>{children}</Box>;
 };
 
-ProfileWrapper.Avatar = function ProfileWrapperAvatar({ src, alt }) {
-  return (
-    <Avatar>
-      <img src={src} alt={alt} />
-    </Avatar>
-  );
+MembersWrapper.TitleSmall = function MembersWrapperTitleSmall({ children }) {
+  return <TitleSmall>{children}</TitleSmall>;
 };
 
-ProfileWrapper.Title = function ProfileWrapperTitle({ children }) {
-  return <Title>{children}</Title>;
+MembersWrapper.MembersList = function MembersWrapperMembersList({ children }) {
+  return <MembersList>{children}</MembersList>;
 };
 
-ProfileWrapper.Link = function ProfileWrapperLink({ href, children }) {
+MembersWrapper.Link = function MembersWrapperLink({ href, children }) {
   return (
     <Link href={href} target="_blank" rel="noreferrer">
       {children}
     </Link>
   );
-};
-
-ProfileWrapper.Text = function ProfileWrapperText({ children }) {
-  return <Text>{children}</Text>;
-};
-
-ProfileWrapper.TitleSmall = function ProfileWrapperTitleSmall({ children }) {
-  return <TitleSmall>{children}</TitleSmall>;
-};
-
-ProfileWrapper.MembersList = function ProfileWrapperMembersList({ children }) {
-  return <MembersList>{children}</MembersList>;
 };
