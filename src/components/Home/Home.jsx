@@ -7,7 +7,6 @@ import Button from '../../elements/Button';
 import HomeWrapper from './Styles';
 import { LoadingContainer } from '../Loading/Loading';
 import { ErrorContainer } from '../Error/Error';
-import NotFound from '../NotFound/NotFound';
 
 export default function Home() {
   const [userInput, setUserInput] = useState('futurice');

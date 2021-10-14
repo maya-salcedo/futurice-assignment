@@ -10,7 +10,6 @@ import NotFound from '../NotFound/NotFound';
 
 export default function Repo() {
   const { org_name } = useParams();
-  const [org, setOrg] = useState();
   const [repos, setRepos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);

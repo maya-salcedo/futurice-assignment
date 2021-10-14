@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import MembersWrapper from './Styles';
 import { ErrorContainer } from '../Error/Error';
@@ -9,7 +9,6 @@ import NotFound from '../NotFound/NotFound';
 import Button from '../../elements/Button';
 
 export default function Members() {
-  const history = useHistory();
   const { org_name } = useParams();
   const [members, setMembers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
