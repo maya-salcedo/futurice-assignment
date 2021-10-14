@@ -32,7 +32,8 @@ export default function Home() {
     } catch (err) {
       setIsError(true);
       setIsLoading(false);
-      setUserInput('');
+      setOrg(null);
+      setUserInput('futurice');
       console.error(`Error at Home: ${err}`);
     }
   };
