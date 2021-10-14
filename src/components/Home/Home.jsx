@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
+
+import OrgContext from '../../contexts/OrgContext';
 
 import Button from '../../elements/Button';
 import HomeWrapper from './Styles';
@@ -9,9 +11,10 @@ import NotFound from '../NotFound/NotFound';
 
 export default function Home() {
   const [userInput, setUserInput] = useState('futurice');
-  const [org, setOrg] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const { org, setOrg } = useContext(OrgContext);
 
   const handleSearch = (e) => {
     setUserInput(e.target.value);
@@ -25,10 +28,11 @@ export default function Home() {
       );
       setOrg(data);
       setIsLoading(false);
+      setIsError(false);
     } catch (err) {
       setIsError(true);
       setIsLoading(false);
-      setUserInput('futurice');
+      setUserInput('');
       console.error(`Error at Home: ${err}`);
     }
   };

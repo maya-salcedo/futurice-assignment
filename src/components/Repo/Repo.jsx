@@ -48,7 +48,7 @@ export default function Repo() {
         <RepoWrapper.Card>
           <RepoWrapper.Name>{org_name}</RepoWrapper.Name>
           <Button>
-            <Button.Link to="/">Home</Button.Link>
+            <Button.Link to="/">Company</Button.Link>
             <Button.Link to={{ pathname: `/${org_name}/members` }}>
               Members
             </Button.Link>

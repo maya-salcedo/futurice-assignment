@@ -31,12 +31,6 @@ export default function Members() {
     }
   };
 
-  const handleClick = () => {
-    history.push('/');
-  };
-
-  console.log(history);
-
   useEffect(() => {
     getData();
     // eslint-disable-next-line
@@ -50,9 +44,9 @@ export default function Members() {
         <MembersWrapper.Box>
           <RepoWrapper.Name>{org_name}</RepoWrapper.Name>
           <Button>
-            <button onClick={handleClick}>Home</button>
-            <Button.Link to={{ pathname: `/${org_name}/repos` }}>
-              Repos
+            <Button.Link to="/">Company</Button.Link>
+            <Button.Link to={{ pathname: `/${org_name}/members` }}>
+              Members
             </Button.Link>
           </Button>
           <MembersWrapper.TitleSmall>Public Members</MembersWrapper.TitleSmall>
