@@ -8,7 +8,7 @@ import { LoadingContainer } from '../Loading/Loading';
 import { ErrorContainer } from '../Error/Error';
 import NotFound from '../NotFound/NotFound';
 
-export function Repo() {
+export default function Repo() {
   const { org_name } = useParams();
   const [org, setOrg] = useState();
   const [repos, setRepos] = useState([]);

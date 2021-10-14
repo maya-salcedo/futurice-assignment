@@ -25,7 +25,7 @@ const Card = styled.div`
   width: 98%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
   border-radius: 0.2rem;
-  padding: 2rem 1rem 2.5rem;
+  padding: 2rem 1rem 1rem;
 
   @media (min-width: 550px) {
     width: 30rem;
@@ -78,6 +78,7 @@ const TextSmall = styled.p`
 `;
 
 const Avatar = styled.div`
+  margin-top: 2rem;
   text-align: center;
   > img {
     max-width: 8rem;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import MembersWrapper from './Styles';
 import { ErrorContainer } from '../Error/Error';
@@ -8,7 +8,8 @@ import RepoWrapper from '../Repo/Styles';
 import NotFound from '../NotFound/NotFound';
 import Button from '../../elements/Button';
 
-export function Members() {
+export default function Members() {
+  const history = useHistory();
   const { org_name } = useParams();
   const [members, setMembers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -30,6 +31,12 @@ export function Members() {
     }
   };
 
+  const handleClick = () => {
+    history.push('/');
+  };
+
+  console.log(history);
+
   useEffect(() => {
     getData();
     // eslint-disable-next-line
@@ -43,7 +50,7 @@ export function Members() {
         <MembersWrapper.Box>
           <RepoWrapper.Name>{org_name}</RepoWrapper.Name>
           <Button>
-            <Button.Link to="/">Home</Button.Link>
+            <button onClick={handleClick}>Home</button>
             <Button.Link to={{ pathname: `/${org_name}/repos` }}>
               Repos
             </Button.Link>

@@ -7,7 +7,7 @@ import { LoadingContainer } from '../Loading/Loading';
 import { ErrorContainer } from '../Error/Error';
 import NotFound from '../NotFound/NotFound';
 
-export function Home() {
+export default function Home() {
   const [userInput, setUserInput] = useState('futurice');
   const [org, setOrg] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -42,14 +42,16 @@ export function Home() {
         <HomeWrapper.Card>
           <HomeWrapper.Search>
             <HomeWrapper.SearchInput
-              placeholder="org name"
+              placeholder="Company name"
               onChange={handleSearch}
             />
             <HomeWrapper.SearchButton onClick={handleSubmit} />
           </HomeWrapper.Search>
-          <HomeWrapper.TextSmall>
-            *** defaults to Futurice
-          </HomeWrapper.TextSmall>
+          {!org && (
+            <HomeWrapper.TextSmall>
+              *** defaults to Futurice
+            </HomeWrapper.TextSmall>
+          )}
           {org && (
             <>
               <HomeWrapper.Avatar src={org?.avatar_url} alt={org?.login} />
