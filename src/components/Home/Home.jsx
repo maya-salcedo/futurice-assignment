@@ -9,11 +9,10 @@ import { LoadingContainer } from '../Loading/Loading';
 import { ErrorContainer } from '../Error/Error';
 
 export default function Home() {
-  const [userInput, setUserInput] = useState('futurice');
+  const { org, setOrg } = useContext(OrgContext);
+  const [userInput, setUserInput] = useState(org?.name ?? 'futurice');
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-
-  const { org, setOrg } = useContext(OrgContext);
 
   const handleSearch = (e) => {
     setUserInput(e.target.value);
