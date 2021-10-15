@@ -44,8 +44,8 @@ export default function Members() {
           <RepoWrapper.Name>{org_name}</RepoWrapper.Name>
           <Button>
             <Button.Link to="/">Company</Button.Link>
-            <Button.Link to={{ pathname: `/${org_name}/members` }}>
-              Members
+            <Button.Link to={{ pathname: `/${org_name}/repos` }}>
+              Repos
             </Button.Link>
           </Button>
           <MembersWrapper.TitleSmall>Public Members</MembersWrapper.TitleSmall>
